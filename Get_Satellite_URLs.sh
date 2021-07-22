@@ -42,7 +42,7 @@ $CAT $SAT_REPO | $AWK '/]/,/^$/' > $TEMPDIR/repos
 # Replace variables with values
 $SED -i "s/\$releasever/$RELEASEVER/g" $TEMPDIR/repos
 $SED -i "s/\$basearch/$BASEARCH/g" $TEMPDIR/repos
-$SED -i 's/ //g' $TEMPDIR/repos
+$SED -i 's/ = /=/g' $TEMPDIR/repos
 
 # Split the combined repos file into individual repo files
 cd $TEMPDIR
